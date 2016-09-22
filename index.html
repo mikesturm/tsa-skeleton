@@ -8,28 +8,34 @@
   <title>Your page title here :)</title>
   <meta name="description" content="">
   <meta name="author" content="">
-  <script>
-  $(document).ready(function() {
-var stickyNavTop = $('.nav').offset().top;
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
+	<script src="js/jquery-scrolltofixed-min.js" type="text/javascript"></script>
 
-var stickyNav = function(){
-var scrollTop = $(window).scrollTop();
+	<script type="text/javascript">
+		$(document).ready(function() {
+			// grab the initial top offset of the navigation
+		   	var stickyNavTop = $('.nav').offset().top;
 
-if (scrollTop > stickyNavTop) {
-    $('.nav').addClass('sticky');
-} else {
-    $('.nav').removeClass('sticky');
-}
-};
+		   	// our function that decides weather the navigation bar should have "fixed" css position or not.
+		   	var stickyNav = function(){
+			    var scrollTop = $(window).scrollTop(); // our current vertical position from the top
 
-stickyNav();
+			    // if we've scrolled more than the navigation, change its position to fixed to stick to top,
+			    // otherwise change it back to relative
+			    if (scrollTop > stickyNavTop) {
+			        $('.nav').addClass('sticky');
+			    } else {
+			        $('.nav').removeClass('sticky');
+			    }
+			};
 
-$(window).scroll(function() {
-  stickyNav();
-});
-});
-</script>
-
+			stickyNav();
+			// and run it again every time you scroll
+			$(window).scroll(function() {
+				stickyNav();
+			});
+		});
+	</script>
   <!-- Mobile Specific Metas
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
