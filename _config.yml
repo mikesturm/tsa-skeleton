@@ -1,7 +1,7 @@
 name: The Sturm Agency
 description: Alphs template for Jekyll
-baseurl: 'http://mikesturm.net/tsa-skeleton'
+baseurl: 'http://mikesturm.net/tsa-skeleton/'
 
-url: "http://mikesturm.net/tsa-skeleton"
+url: "http://mikesturm.net/tsa-skeleton/"
 
 paginate: 10
